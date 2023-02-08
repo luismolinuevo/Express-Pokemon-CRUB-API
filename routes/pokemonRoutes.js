@@ -9,6 +9,9 @@ export default function setupPokemonRouter(db) {
         res.status(200).json({
             success: true,     //return true if the data is found
             pokemon: db.data.pokemon,  //the pokemon being returned
+            // type: db.data.type,
+            // weight: db.data.weight,
+            // height: db.data.height
         });
 
     });
@@ -31,6 +34,9 @@ export default function setupPokemonRouter(db) {
         db.data.pokemon.push({
             id: nanoid(4),  //id of pokemon
             name: req.body.pokemon,  //name of pokemon
+            // type: req.body.type,
+            // weight: req.body.weight,
+            // height: req.body.height
         })
 
         db.write(); //save to database
